@@ -20,7 +20,6 @@ function miFuncion(valor, index, array) {
 moverArriba = function () {
   //Añadir splice()
   var arriba = document.getElementById("boton1");
-
   if (arriba.onclick) {
     var valor = (textoMov.innerHTML = "arriba");
     console.log(valor);
