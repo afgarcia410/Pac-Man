@@ -1,15 +1,19 @@
 var mynamespace = mynamespace || {};
-
+var pacman={
+x:0,
+y:0
+};
 var tablero = [
-  ["X", 0, 1],
-  [0, 1, 0],
-  [0, 0, 0],
-  [0, 0, 0],
-  [1, 0, 0],
+  ["X", 0, 1,0,0,1,0,0],
+  [0, 1, 0,0,0,0,0,0],
+  [0, 0, 1,0,0,0,1,0],
+  [0, 0, 1,1,1,0,1,0],
+  [1, 0, 0,0,0,0,0,0],
 ];
 let vacio = "";
 var cogeArray = document.getElementById("campoArray");
 var textoMov = document.getElementById("texto");
+var botonR=document.getElementById("reinicio");
 tablero.forEach(miFuncion);
 cogeArray.innerHTML = vacio;
 
@@ -28,7 +32,9 @@ moverArriba = function () {
 moverAbajo = function () {
   var arriba = document.getElementById("boton2");
   if (arriba.onclick) {
-    var valor = (textoMov.innerHTML = "abajo");
+    pacman.y=pacman.y+1;
+
+   // var valor = (textoMov.innerHTML = "abajo");
     console.log(valor);
   }
 };
@@ -46,3 +52,8 @@ moverIzquierda = function () {
     console.log(valor);
   }
 };
+reiniciar=function(){
+  if (botonR.onclick) {
+    location.reload();
+  }
+}
